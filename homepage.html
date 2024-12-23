@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://img.freepik.com/free-vector/navigation-realistic-background_1284-13716.jpg">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Video Background Styles */
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+        
+        /* Overlay to make menu more visible */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        
+        ul {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            z-index: 1;
+        }
+
+        li {
+            position: relative;
+            list-style: none;
+            width: 200px;
+            padding: 15px;
+            background: #3e3f46;
+            z-index: calc(1 * var(--i));
+            transition: 0.5s;
+            text-align: center;
+        }
+
+        li:hover {
+            background: #996fae;
+            transform: translateX(-50px);
+        }
+
+        li::before {
+            font-family: "FontAwesome";
+            color: #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: attr(data-icon);
+            position: absolute;
+            top: 0;
+            left: -40px;
+            width: 40px;
+            height: 100%;
+            background: #2e3133;
+            transform-origin: right;
+            transform: skewY(45deg);
+            transition: 0.5s;
+        }
+
+        li:hover::before {
+            background: #765190;
+        }
+
+        li::after {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #35383e;
+            transform-origin: bottom;
+            transform: skewX(45deg);
+            transition: 0.5s;
+        }
+
+        li:hover::after {
+            background: #86589d;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #999;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+        }
+
+        li:hover a {
+            color: #fff;
+        }
+
+        li:last-child::after {
+            box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+    <title>3D Navigation Menu</title>
+</head>
+<body>
+    <video autoplay muted loop class="video-background" width="100%" height="50%">
+        <source src="alone-at-the-train-station-moewalls-com.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <ul>
+        <li style="--i:6;" data-icon="&#xf015">
+            <a href="sample.html">Home</a>
+        </li>
+        <li style="--i:5;" data-icon="&#xf2bb">
+            <a href="about.html">About</a>
+        </li>
+        <li style="--i:4;" data-icon="&#xf03a">
+            <a href="services.html">Services</a>
+        </li>
+        <li style="--i:3;" data-icon="&#xf07c">
+            <a href="contact.html">Contact</a>
+        </li>
+        <li style="--i:2;" data-icon="&#xf0c0">
+            <a href="team.html">Our Team</a>
+        </li>
+    </ul>
+</body>
+</html>

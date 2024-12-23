@@ -1,0 +1,30 @@
+*{ 
+    margin: 0px; 
+    padding: 0px; 
+} 
+body{ 
+    background-color: black; 
+} 
+div{ 
+    background-color: rgb(171, 7, 83); 
+    border:solid 10px rgb(74, 3, 104); 
+    margin: 5% 35%; 
+    text-align: center; 
+    padding: 20px; 
+    border-radius: 30px; 
+    height: 390px; 
+    width: 300px; 
+    color: aliceblue; 
+} 
+button{ 
+    width: 35%; 
+    border-radius: 30px; 
+    background-color: rgb(171, 7, 83); 
+} 
+button:hover{ 
+    background-color: aliceblue; 
+} 
+h1{ 
+    font-size: 15px; 
+    color: aliceblue; 
+}
